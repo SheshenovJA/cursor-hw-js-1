@@ -117,9 +117,9 @@ function guessNumber() {
     do {
         guess = prompt(userMsg);
         if (number < guess) {
-            userMsg = "Our number is higher, try again";
-        } else if (number > guess) {
             userMsg = "Our number is lower, try again";
+        } else if (number > guess) {
+            userMsg = "Our number is higher, try again";
         }
     } while (guess != number);
     alert("You are right, the number is " + number);

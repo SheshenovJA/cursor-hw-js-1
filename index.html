@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+  <title>JavaScript 1 homework</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel ="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+
+<body>
+  <div id="container">
+<h1>JavaScript homework #1</h1>
+<div class="title"><h3>Task list:</h3></div>
+<ul class="faq">
+    <li class="q"><img src="img/arrow.png" alt="this is arrow!11">1. Prepare and show message in console
+    </li>
+    <li class="a">
+      - Create variables for person name, time, place and event<br/>
+ - Event should be entered using prompt<br/>
+ // tip: var smth = prompt("Please enter value", "Default value");<br/>
+ - Other variables should be set as you wish<br/>
+ - Join all values to one sentence and show it in console<br/>
+ // example: Valera has a meeting today at 17:00 somewhere in Warsaw.<br/>
+
+  <b>Answer:</b><br/>
+<input id="clickMe" type="button" value="Run Script and watch console" onclick="promtpQuestions();" /><br/>
+<b>Screen:</b><br/>
+<a href="http://i.imgur.com/600Fvq1.png">
+  <img src="http://imgur.com/600Fvq1l.png" />
+</a>
+    </li>
+
+    <li class="q"><img src="img/arrow.png" alt="this is arrow!11">Find and show (using alert) distance between 2 points.</li>
+    <li class="a">
+      - Create variables for x1, y1, x2, y2, result<br/>
+- Coordinates of second point (X2, Y2) should be entered using prompt<br/>
+- Other variables should be set as you wish<br/>
+- Find distance, set it to result variable<br/>
+- Alert the result with description<br/>
+// example: The distance between points A(0,1) and B(0,11) is 10.<br/>
+
+<b>Answer:</b><br/>
+<input id="clickMe" type="button" value="Run Script" onclick="distCacl();" />
+    </li>
+
+    <li class="q"><img src="img/arrow.png" alt="this is arrow!11">Show in console using FOR.</li>
+    <li class="a">
+      #<br/>
+      ##<br/>
+      ###<br/>
+      ####<br/>
+      #####<br/>
+      ######<br/>
+      #######<br/>
+      ########<br/>
+      #########<br/>
+      ##########<br/>
+  <b>Answer:</b><br/>
+    <code>  for (var line = "#";
+      line.length < 11;
+      line += "#")
+      console.log(line); </code><br/>
+      <b>Screen:</b><br/>
+      <a href="http://i.imgur.com/QxJALr4.png">
+        <img src="http://imgur.com/QxJALr4l.png" /></a><br/>
+        <input id="clickMe" type="button" value="Run Script And watch console" onclick="triAngle();" />
+    </li>
+
+    <li class="q"><img src="img/arrow.png" alt="this is arrow!11">Show in console using WHILE.</li>
+
+    <li class="a"><pre>
+      # # # # #
+      # # # # #
+     # # # # #
+      # # # # #
+     # # # # #
+      # # # # #
+     # # # # #
+    </pre>
+    <b>Answer:</b><br/>
+    <b>Code:</b>
+    <code><pre>
+      function board(size) {
+          var odd=size%2,
+              s=odd?size-1:size,
+              r1 = " #",
+              //first row
+              row1 = r1,
+              //second row base
+              r2 = "# ",
+              //second row
+              row2 = r2,
+              // total size of board, including newlines
+              total = (size*size)+size,
+              // output
+              out = "",
+              // board base
+              o;
+          if(!s) {
+              return r1[0];
+          }
+          for(n=2;2*n&lt;s;n*=2) {
+              row1+=row1;
+              row2+=row2;
+          }
+          //  second loop adds bases until we have the size length
+          while(row1.length&lt;s) {
+              row1+=r1;
+              row2+=r2;
+          }
+          if(odd) {
+              row1+=r1[0];
+              row2+=r2[0];
+          }
+          row1+="\n";
+          row2+="\n";
+          out = o = row1+row2;
+
+          for(n=2;2*n&lt;s;n*=2) {
+              out+=out;
+          }
+          // add the base until were complete or 1 row off (if odd)
+          while(out.length+size+1&lt;total) {
+              out+=o;
+          }
+          if(odd) {
+              out+=row1;
+          }
+          return out;
+      }
+console.log(board(8));
+    </pre></code></br>
+    <b>Screen:</b></br>
+    <a href="http://i.imgur.com/utJyJgV.png">
+  <img src="http://imgur.com/utJyJgVl.png" /></a></br>
+<input id="clickMe" type="button" value="Run Script And watch console" onclick="console.log(board(8));" />
+    </li>
+
+    <li class="q"><img src="img/arrow.png" alt="this is arrow!11">Create “Guess number” game.</li>
+    <li class="a"> >Create variable for random number (from 0 to 100) and set it using Math.random()<br/>
+	// tip: Math.random() returns number from 0 to 1, so you have to<br/>
+  // multiply it by 100 and then convert result to integer.<br/>
+  - Ask user (with prompt) to guess the number<br/>
+  - If entered number doesn’t equal to our variable, alert “Our number is higher, try again” or “Our number is lower, try again”. Then ask user to enter number again.<br/>
+  - If user guessed the number, show message “You are right, the number is [number]”.<br/>
+<b>Answer:</b><br/>
+<input id="clickMe" type="button" value="Run Script(via opened console)" onclick="guessNumber();" />
+ </li>
+
+</ul>
+  </div>
+<footer>
+  <p>&copy; Megas 2016</p>
+</footer>
+
+</body>
+
+
+
+</html>

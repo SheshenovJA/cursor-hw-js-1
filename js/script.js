@@ -1,24 +1,3 @@
-//here we are js-csript;
-//accordian, page interface using jguery.
-  var action = "click";
-  var speed = "600";// fade speed
-
-  $(document).ready(function() {
-    $('li.q').on(action, function() {
-//get next element
-        $(this).next()
-        .slideToggle(speed)
-        //select all other answers
-          .siblings('li.a')
-          .slideUp();
-//get img for active question
-  var img = $(this).children('img');
-  //remove oter querstions arrows
-  $('img').not(img).removeClass('rotate');
-  //toggle rotate class
-  img.toggleClass('rotate');// join from css rotate class
-});
-  });
   //part for tasks
   //2
   function distCacl(){
